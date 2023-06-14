@@ -12,13 +12,12 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name = "Student")
 @Entity
-
 public class Student implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="ID", nullable = false)
-    public Integer iD;
+    public Integer id;
 
     @Column(name="Name", nullable = false)
     public String name;
@@ -27,7 +26,7 @@ public class Student implements Serializable{
     public Date birthDate;
 
     public Student(Integer iD, String name, Date birthDate) {
-        this.iD = iD;
+        this.id = iD;
         this.name = name;
         this.birthDate = birthDate;
     }
@@ -49,10 +48,10 @@ public class Student implements Serializable{
     }
 
     public Integer getID() {
-        return iD;
+        return id;
     }
 
     public void setID(Integer iD) {
-        this.iD = iD;
+        this.id = iD;
     }
 }

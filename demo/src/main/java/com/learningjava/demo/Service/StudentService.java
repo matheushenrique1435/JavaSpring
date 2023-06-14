@@ -8,18 +8,24 @@ import org.springframework.stereotype.Service;
 import com.learningjava.demo.Model.Student;
 import com.learningjava.demo.Repository.StudentRepository;
 
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
+
 @Service
 public class StudentService{
 
-    @Autowired(required = false)
+    @Autowired
     private StudentRepository studentRepository;
+
+    public StudentService() {
+        super();
+    }
 
     public List<Student> findAll()
     {
         return studentRepository.findAll();
     }
     
-    public Student create(Student student){
+    public Student create(@RequestBody Student student){
         return this.studentRepository.save(student);
     }
 

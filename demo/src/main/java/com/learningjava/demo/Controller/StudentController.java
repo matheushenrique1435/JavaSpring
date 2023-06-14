@@ -22,10 +22,9 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin( origins = "*" )
 
 public class StudentController {
-    
     @Autowired
     private StudentService studentService;
-    
+
     @GetMapping("/students")
     public ResponseEntity<List<Student>> findAll()
     {
