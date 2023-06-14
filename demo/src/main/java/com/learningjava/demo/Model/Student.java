@@ -6,7 +6,7 @@ import java.util.Date;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Data
 @NoArgsConstructor
@@ -22,7 +22,7 @@ public class Student implements Serializable{
     @Column(name="Name", nullable = false)
     public String name;
 
-    @Column(name="BirthDate", nullable = false)
+    @Column(name="BirthDate", nullable = true)
     public Date birthDate;
 
     public Student(Integer iD, String name, Date birthDate) {

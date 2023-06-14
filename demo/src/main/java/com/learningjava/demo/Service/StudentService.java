@@ -16,10 +16,6 @@ public class StudentService{
     @Autowired
     private StudentRepository studentRepository;
 
-    public StudentService() {
-        super();
-    }
-
     public List<Student> findAll()
     {
         return studentRepository.findAll();
@@ -29,5 +25,14 @@ public class StudentService{
         return this.studentRepository.save(student);
     }
 
+    public Student update(@RequestBody Student student) throws Exception {
+        if(student.getID() == null)
+            throw new Exception("Register not found");
+        return this.studentRepository.save(student);
+    }
+
+    public void deleteById(Integer id){
+        this.studentRepository.deleteById((id));
+    }
 
 }
